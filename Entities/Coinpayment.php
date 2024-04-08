@@ -12,7 +12,7 @@ class Coinpayment extends BaseModel
      *
      * @var array<string>
      */
-    protected $fillable = ['txn_id', 'ipn_version', 'ipn_type', 'ipn_mode', 'ipn_id', 'merchant', 'item_name', 'item_number', 'amount', 'amounti', 'currency', 'status', 'status_text', 'user_id', 'payment_id'];
+    protected $fillable = ['txn_id', 'ipn_version', 'ipn_type', 'ipn_mode', 'ipn_id', 'merchant', 'item_name', 'item_number', 'amount', 'amounti', 'currency', 'status', 'status_text', 'partner_id', 'payment_id'];
 
     /**
      * The fields that are to be render when performing relationship queries.
@@ -59,7 +59,7 @@ class Coinpayment extends BaseModel
         $this->fields->string('currency')->nullable()->html('text');
         $this->fields->string('status')->nullable()->html('text');
         $this->fields->string('status_text')->nullable()->html('text');
-        $this->fields->foreignId('user_id')->nullable()->html('recordpicker')->relation(['user']);
+        $this->fields->foreignId('partner_id')->nullable()->html('recordpicker')->relation(['user']);
         $this->fields->foreignId('payment_id')->nullable()->html('recordpicker')->relation(['payment']);
 
     }
@@ -69,8 +69,8 @@ class Coinpayment extends BaseModel
      */
     public function structure($structure): array
     {
-        $structure['table'] = ['txn_id', 'ipn_version', 'ipn_type', 'ipn_mode', 'ipn_id', 'merchant', 'item_name', 'item_number', 'amount', 'amounti', 'currency', 'status', 'status_text', 'user_id'];
-        $structure['filter'] = ['txn_id', 'user_id'];
+        $structure['table'] = ['txn_id', 'ipn_version', 'ipn_type', 'ipn_mode', 'ipn_id', 'merchant', 'item_name', 'item_number', 'amount', 'amounti', 'currency', 'status', 'status_text', 'partner_id'];
+        $structure['filter'] = ['txn_id', 'partner_id'];
 
         return $structure;
     }

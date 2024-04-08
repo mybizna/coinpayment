@@ -33,8 +33,8 @@ public function manageAirtimePurchase(Request $request, $pk)
     $context = $airtimeProcessor->processAirtime($airtime);
 
     Transaction::firstOrCreate([
-        'user_id' => $airtime->user_id,
-        'from_user_id' => $airtime->user_id,
+        'partner_id' => $airtime->partner_id,
+        'from_partner_id' => $airtime->partner_id,
         'payment' => $airtime->payment,
         'type' => 'admin-airtime-repurchase',
         'description' => 'Admin Airtime Repurchase',

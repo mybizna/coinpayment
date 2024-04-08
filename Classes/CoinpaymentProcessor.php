@@ -86,7 +86,7 @@ class CoinpaymentProcessor
             'amounti' => $request->input('amounti'),
             'currency' => $request->input('currency'),
             'status' => $request->input('status'),
-            'user_id' => $payment->user_id,
+            'partner_id' => $payment->partner_id,
             'payment_id' => $payment->id,
         ]);
 
