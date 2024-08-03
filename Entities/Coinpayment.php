@@ -15,20 +15,6 @@ class Coinpayment extends BaseModel
     protected $fillable = ['txn_id', 'ipn_version', 'ipn_type', 'ipn_mode', 'ipn_id', 'merchant', 'item_name', 'item_number', 'amount', 'amounti', 'currency', 'status', 'status_text', 'partner_id', 'payment_id'];
 
     /**
-     * The fields that are to be render when performing relationship queries.
-     *
-     * @var array<string>
-     */
-    public $rec_names = ['txn_id'];
-
-    /**
-     * List of tables names that are need in this model during migration.
-     *
-     * @var array<string>
-     */
-    public array $migrationDependancy = [];
-
-    /**
      * The table associated with the model.
      *
      * @var string
@@ -64,31 +50,6 @@ class Coinpayment extends BaseModel
 
     }
 
-    /**
-     * List of structure for this model.
-     */
-    public function structure($structure): array
-    {
-        $structure['table'] = ['txn_id', 'ipn_version', 'ipn_type', 'ipn_mode', 'ipn_id', 'merchant', 'item_name', 'item_number', 'amount', 'amounti', 'currency', 'status', 'status_text', 'partner_id'];
-        $structure['filter'] = ['txn_id', 'partner_id'];
-
-        return $structure;
-    }
 
 
-    /**
-     * Define rights for this model.
-     *
-     * @return array
-     */
-    public function rights(): array
-    {
-        $rights = parent::rights();
-
-        $rights['staff'] = ['view' => true];
-        $rights['registered'] = ['view' => true];
-        $rights['guest'] = [];
-
-        return $rights;
-    }
 }
