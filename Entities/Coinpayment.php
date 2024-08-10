@@ -1,8 +1,8 @@
 <?php
 
-namespace Modules\Coinpayment\Entities;
+namespace Modules\Coinpayment\Models;
 
-use Modules\Base\Entities\BaseModel;
+use Modules\Base\Models\BaseModel;
 
 class Coinpayment extends BaseModel
 {

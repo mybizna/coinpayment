@@ -2,12 +2,9 @@
 
 namespace Modules\Coinpayment\Classes;
 
-use Modules\Payment\Entities\Payment;
-use Modules\Payment\Entities\Paymentcoin;
-use Modules\Payment\Entities\Coinpayment;
 use Modules\Payment\Classes\PaymentProcessor;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Config;
+use Modules\Payment\Models\Coinpayment;
+use Modules\Payment\Models\Payment;
 
 class CoinpaymentProcessor
 {
