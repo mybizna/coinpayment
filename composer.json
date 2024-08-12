@@ -26,7 +26,14 @@
   },
   "autoload": {
     "psr-4": {
-      "Modules\\Coinpayment\\": ""
+      "Modules\\Coinpayment\\": "app/",
+      "Modules\\Coinpayment\\Database\\Factories\\": "database/factories/",
+      "Modules\\Coinpayment\\Database\\Seeders\\": "database/seeders/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Modules\\Coinpayment\\Tests\\": "tests/"
     }
   }
 }
