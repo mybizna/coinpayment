@@ -9,7 +9,7 @@ class CoinpaymentServiceProvider extends ServiceProvider
 {
     protected string $moduleName = 'Coinpayment';
 
-    protected string $moduleNameLower = 'Coinpayment';
+    protected string $moduleNameLower = 'coinpayment';
 
     /**
      * Boot the application events.
