@@ -17,7 +17,7 @@ class CoinpaymentResource extends Resource
 
     protected static ?string $slug = 'coinpayment/coinpayment';
 
-    protected static ?string $navigationGroup = 'Coinpayment';
+    protected static ?string $navigationGroup = 'Gateway';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
