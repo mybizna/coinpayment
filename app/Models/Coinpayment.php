@@ -19,5 +19,5 @@ class Coinpayment extends BaseModel
      *
      * @var string
      */
-    protected $table = "Coinpayment";
+    protected $table = "coinpayment_coinpayment";
 }
