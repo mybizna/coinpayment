@@ -27,10 +27,15 @@ return new class extends Migration
             $table->string('currency')->nullable();
             $table->string('status')->nullable();
             $table->string('status_text')->nullable();
-            $table->foreignId('partner_id')->constrained('partner_partner')->onDelete('cascade')->nullable()->index('coinpayment_coinpayment_partner_id');
-            $table->foreignId('payment_id')->constrained('account_payment')->onDelete('cascade')->nullable()->index('coinpayment_coinpayment_payment_id');
+            $table->foreignId('partner_id')->nullable()->constrained('partner_partner')->onDelete('set null');
+            $table->foreignId('payment_id')->nullable()->constrained('account_payment')->onDelete('set null');
+
+            $table->foreignId('created_by')->nullable()->constrained('users')->onDelete('set null');
+            $table->foreignId('updated_by')->nullable()->constrained('users')->onDelete('set null');
+            $table->foreignId('deleted_by')->nullable()->constrained('users')->onDelete('set null');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
