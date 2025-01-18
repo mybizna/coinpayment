@@ -24,7 +24,6 @@ class Coinpayment extends BaseModel
 
     public function migration(Blueprint $table): void
     {
-        $table->id();
 
         $table->string('txn_id')->nullable();
         $table->string('ipn_version')->nullable();
