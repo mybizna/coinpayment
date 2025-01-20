@@ -38,8 +38,13 @@ class Coinpayment extends BaseModel
         $table->string('currency')->nullable();
         $table->string('status')->nullable();
         $table->string('status_text')->nullable();
-        $table->foreignId('partner_id')->nullable()->constrained(table: 'partner_partner')->onDelete('set null');
-        $table->foreignId('payment_id')->nullable()->constrained(table: 'account_payment')->onDelete('set null');
+        $table->unsignedBigInteger('partner_id')->nullable();
+        $table->unsignedBigInteger('payment_id')->nullable();
+    }
 
+    public function post_migration(Blueprint $table): void
+    {
+        $table->foreign('partner_id')->references('id')->on('partner_partner')->onDelete('set null');
+        $table->foreign('payment_id')->references('id')->on('account_payment')->onDelete('set null');
     }
 }
