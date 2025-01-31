@@ -4,8 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Modules\Coinpayment\Classes\CoinpaymentProcessor;
+use Modules\Base\Http\Controllers\BaseController;
 
-class CoinpaymentController extends Controller
+class CoinpaymentController extends BaseController
 {
     public function index(Request $request)
     {
